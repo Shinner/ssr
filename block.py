@@ -91,8 +91,6 @@ class Block:
             Context.block.add(self)
         if Context.root_block is not None:
             Context.root_block.blocks[self._id] = self
-            if isinstance(self, components.TempFileManager):
-                Context.root_block.temp_file_sets.append(self.temp_files)
         return self
 
     def unrender(self):
